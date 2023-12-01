@@ -6,7 +6,7 @@ use chrono::{
         Fixed, InternalFixed, InternalNumeric, Item, Numeric, Pad, ParseError, ParseErrorKind,
         Parsed,
     },
-    Date, DateTime, Duration, FixedOffset, IsoWeek, Local, LocalResult, Month, Months, NaiveDate,
+    DateTime, TimeDelta, FixedOffset, IsoWeek, Local, LocalResult, Month, Months, NaiveDate,
     NaiveDateTime, NaiveTime, NaiveWeek, ParseMonthError, ParseWeekdayError, RoundingError,
     SecondsFormat, TimeZone, Utc, Weekday,
 };
@@ -22,7 +22,7 @@ impl_total_size_childless! {
     Numeric,
     IsoWeek,
     Weekday,
-    Duration,
+    TimeDelta,
     NaiveDate,
     NaiveTime,
     NaiveWeek,
@@ -36,18 +36,6 @@ impl_total_size_childless! {
     ParseMonthError,
     InternalNumeric,
     ParseWeekdayError,
-}
-
-// FIXME: `chrono::Date` is deprecated
-#[allow(deprecated)]
-impl<Tz> SizeOf for Date<Tz>
-where
-    Tz: TimeZone,
-    Tz::Offset: SizeOf,
-{
-    fn size_of_children(&self, context: &mut Context) {
-        self.offset().size_of_children(context);
-    }
 }
 
 impl<Tz> SizeOf for DateTime<Tz>
