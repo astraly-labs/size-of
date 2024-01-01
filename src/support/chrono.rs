@@ -6,7 +6,7 @@ use chrono::{
         Fixed, InternalFixed, InternalNumeric, Item, Numeric, Pad, ParseError, ParseErrorKind,
         Parsed,
     },
-    DateTime, TimeDelta, FixedOffset, IsoWeek, Local, LocalResult, Month, Months, NaiveDate,
+    DateTime, FixedOffset, IsoWeek, Local, LocalResult, Month, Months, NaiveDate,
     NaiveDateTime, NaiveTime, NaiveWeek, ParseMonthError, ParseWeekdayError, RoundingError,
     SecondsFormat, TimeZone, Utc, Weekday,
 };
@@ -22,7 +22,6 @@ impl_total_size_childless! {
     Numeric,
     IsoWeek,
     Weekday,
-    TimeDelta,
     NaiveDate,
     NaiveTime,
     NaiveWeek,
