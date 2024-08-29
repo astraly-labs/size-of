@@ -1,12 +1,11 @@
 [package]
-name = "size-of"
+name = "feldera-size-of"
 version = "0.1.5"
 description = "A crate for measuring the total memory usage of an object"
 authors = ["Chase Wilson <me@chasewilson.dev>"]
 license = "MIT OR Apache-2.0"
 edition = "2021"
 readme = "README.md"
-repository = "https://github.com/Kixiron/size-of"
 keywords = [
     "memory",
     "heapsize",
@@ -45,7 +44,7 @@ chrono = { version = "0.4.38", default-features = false, features = ["rkyv-64", 
 hashbrown = { version = "0.13.2", optional = true }
 bigdecimal = { version = "0.3.0", optional = true }
 xxhash-rust = { version = "0.8.6", optional = true }
-rust_decimal = { git = "https://github.com/gz/rust-decimal.git", rev = "ea85fdf", optional = true }
+rust_decimal = { package = "feldera_rust_decimal", version = "1.33.1-feldera.1", optional = true }
 ordered-float = { version = "3.0.0", optional = true, default-features = false, features = ["std"] }
 time = { version = "0.3.15", default-features = false, optional = true }
 num-bigint = { version = "0.4.3", default-features = false, optional = true }
