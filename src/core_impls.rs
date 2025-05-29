@@ -299,11 +299,35 @@ impl_tuple! {
 impl_function_ptrs! {
     "C",
     "Rust",
+   "system",
+}
+
+#[cfg(any(target_arch = "arm", target_arch = "aarch64"))]
+impl_function_ptrs! {
     "aapcs",
+}
+
+#[cfg(target_arch = "x86")]
+impl_function_ptrs! {
     "cdecl",
-    "win64",
+}
+
+#[cfg(target_arch = "x86_64")]
+impl_function_ptrs! {
     "sysv64",
-    "system",
-    "stdcall",
+}
+
+#[cfg(target_os = "windows")]
+impl_function_ptrs! {
     "fastcall",
+}
+
+#[cfg(all(target_os = "windows", target_arch = "x86"))]
+impl_function_ptrs! {
+    "stdcall",
+}
+
+#[cfg(all(target_os = "windows", target_arch = "x86_64"))]
+impl_function_ptrs! {
+    "win64",
 }
