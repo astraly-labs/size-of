@@ -1,8 +1,8 @@
 [package]
-name = "feldera-size-of"
+name = "size-of"
 version = "0.1.6"
 description = "A crate for measuring the total memory usage of an object"
-authors = ["Chase Wilson <me@chasewilson.dev>"]
+authors = ["Yasser Tahiri <yasser@pragma.build>"]
 license = "MIT OR Apache-2.0"
 edition = "2021"
 readme = "README.md"

@@ -302,7 +302,7 @@ impl_function_ptrs! {
    "system",
 }
 
-#[cfg(any(target_arch = "arm", target_arch = "aarch64"))]
+#[cfg(target_arch = "arm")]
 impl_function_ptrs! {
     "aapcs",
 }
